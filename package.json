@@ -1,0 +1,30 @@
+{
+  "name": "nodewordfinder",
+  "version": "0.9.3",
+  "description": "Super-fast Scrabble/WWF Word Finder",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "compression": "*",
+    "ejs": "2.5.1",
+    "express": "^4.14.0",
+    "rsvp": "^3.2.1",
+    "serve-favicon": "*",
+    "memjs": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cheshirec7/nodewordfinder"
+  },
+  "keywords": [
+    "wordfinder",
+    "scrabble",
+    "words with friends"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "NodeWordfinder",
+  "description": "Super-fast Scrabble/WWF Word Finder",
+  "repository": "https://github.com/cheshirec7/nodewordfinder",
+  "logo": "https://avatars2.githubusercontent.com/u/3038355?v=3&s=460",
+  "keywords": ["wordfinder", "express", "nodejs", "Scrabble", "Words With Friends"],
+  "image": "heroku/nodejs"
+}
