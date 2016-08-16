@@ -5,7 +5,7 @@ Scrabble / Words With Friends Word Finder for NodeJS
 
 Check out a [live example](http://nodewordfinder.herokuapp.com/) on Heroku. (Note that since the Free Tier is in use there can be a warm-up time when first accessed.)
 
-See the full project description [here](https://github.com/cheshirec7/wordfinder)
+See the full project description [here](https://github.com/cheshirec7/wordfinder).
 
 This project uses:
 
