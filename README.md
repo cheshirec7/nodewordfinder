@@ -5,14 +5,14 @@ Scrabble / Words With Friends Word Finder for NodeJS
 
 Note that since the Free Tier is in use there can be a warm-up time when first accessed.
 
-Components:
+See the full project description [here](https://github.com/cheshirec7/wordfinder)
+
+This project uses:
 
 * [Express Framework](http://expressjs.com/)
 * [Promises](https://github.com/tildeio/rsvp.js/)
 * [MemCachier](https://github.com/alevy/memjs)
 * [Material Design Lite](https://getmdl.io/)
-
-See the full project description [here](https://github.com/cheshirec7/wordfinder)
 
 Check out a [live example](http://nodewordfinder.herokuapp.com/) on Heroku.
 
