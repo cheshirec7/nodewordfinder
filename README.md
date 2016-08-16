@@ -3,26 +3,23 @@ NodeWordFinder
 
 Scrabble / Words With Friends Word Finder for NodeJS
 
-Usage:
-http://nodewordfinder.herokuapp.com/find?tray=test&wc=3&rt=json
+Note that since the Free Tier is in use there can be a warm-up time when first accessed.
 
-Where:
-* tray (required): 1+ letters
-* wc (opt): a number indicating number of wild card characters
-* rt (opt): return type, 'html' (default) or 'json'
-
-Uses:
+Components:
 
 * [Express Framework](http://expressjs.com/)
 * [Promises](https://github.com/tildeio/rsvp.js/)
-* [MySQL connection pooling](https://github.com/felixge/node-mysql)
 * [MemCachier](https://github.com/alevy/memjs)
-* [MongoDB](http://www.mongodb.org/)
-* [jQuery](http://jquery.com/)
 * [Material Design Lite](https://getmdl.io/)
 
 See the full project description [here](https://github.com/cheshirec7/wordfinder)
 
 Check out a [live example](http://nodewordfinder.herokuapp.com/) on Heroku.
 
-Note that since the Free Tier is in use there can be a warm-up time when first accessed.
+Back-end usage:
+http://nodewordfinder.herokuapp.com/find?tray=test&wc=3&rt=json
+
+Where:
+* tray (required): 1+ letters
+* wc (opt): a number indicating number of wild card characters
+* rt (opt): return type, 'html' (default) or 'json'
