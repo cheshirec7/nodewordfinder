@@ -111,4 +111,4 @@ exports.data = function(req, res){
 		console.log(reason);
 		res.send(reason.toString());
 	});
-};
+}

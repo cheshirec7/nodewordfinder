@@ -1,21 +1,21 @@
 {
   "name": "nodewordfinder",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Super-fast Scrabble/WWF Word Finder",
   "engines": {
-    "node": "6.3.1"
+    "node": "9.2.1"
   },
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "compression": "*",
-    "ejs": "2.5.1",
-    "express": "^4.14.0",
-    "rsvp": "^3.2.1",
-    "serve-favicon": "*",
-    "memjs": "*"
+    "compression": "^1.7.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "memjs": "^1.0.0",
+    "rsvp": "^4.7.0",
+    "serve-favicon": "^2.4.5"
   },
   "repository": {
     "type": "git",
