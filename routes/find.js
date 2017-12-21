@@ -3,11 +3,6 @@ var RSVP = require('rsvp'),
 	fs = require('fs'),
 	memjs = require('memjs'),
 	mc = memjs.Client.create(),
-
-	alphastr = 'abcdefghijklmnopqrstuvwxyz',
-
-	//var most_to_least_common = [E, A, R, I, O, T, N, S, L, C, U, D, P, M, H, G, B, F, Y, W, K, V, X, Z, J, Q]
-	most_to_least_common = [4, 0, 17, 8, 14, 19, 13, 18, 11, 2, 20, 3, 15, 12, 7, 6, 1, 5, 24, 22, 10, 21, 23, 25, 9, 16],
 	
 	// RESULT_TYPE_WORDS = 0,
 	// RESULT_TYPE_KEYS = 1,
@@ -29,52 +24,45 @@ function WordList(ana_key_len, letter_counts_arr, wild_count, data_str, cached) 
 
 /////
 WordList.prototype.nullifyWordsNotMatched = function() {
-	var i = 0, j = 0, idx = 0;
+	var i = 0, j = 0, idx = 0,
+		local_letter_counts_arr = [];
 	
 	for (i = 0; i < this.words_arr.length; i++) {
-	
-		for (j = 0; j < 26; j++)
-			this.ana_key_letter_counts_arr[j] = 0;
-		
-		for (j = 0; j < this.ana_key_len; j++)
-			this.ana_key_letter_counts_arr[this.words_arr[i].charCodeAt(j)-ASCII_a]++;
-		
-		for (j = 0; j < 26; j++) {
+		local_letter_counts_arr = this.letter_counts_arr.slice(0, this.letter_counts_arr.length);
+		for (j = 0; j < this.ana_key_len; j++) {
+			idx = this.words_arr[i].charCodeAt(j)-ASCII_a;
 			this.searches++;
-			idx = most_to_least_common[j]
-			if (this.letter_counts_arr[idx] - this.ana_key_letter_counts_arr[idx] < 0) {
+			if (local_letter_counts_arr[idx] == 0) {
 				this.words_arr[i] = null;
 				this.num_found--;
 				break;
 			}
+			local_letter_counts_arr[idx] -= 1;
 		}
 	}
 };
 
 /////
 WordList.prototype.nullifyWordsNotMatchedWild = function() {
-	var i = 0, j = 0, diff = 0, wild_avail = 0, idx = 0;
+	var i = 0, j = 0, idx = 0, wild_avail = 0,
+		local_letter_counts_arr = [];
 	
 	for (i = 0; i < this.words_arr.length; i++) {
-	
-		for (j = 0; j < 26; j++)
-			this.ana_key_letter_counts_arr[j] = 0;
-		
-		for (j = 0; j < this.ana_key_len; j++)
-			this.ana_key_letter_counts_arr[this.words_arr[i].charCodeAt(j)-ASCII_a]++;
-			
+		local_letter_counts_arr = this.letter_counts_arr.slice(0, this.letter_counts_arr.length);
 		wild_avail = this.wild_count;
-		for (j = 0; j < 26; j++) {
-			idx = most_to_least_common[j]
-			diff = this.letter_counts_arr[idx] - this.ana_key_letter_counts_arr[idx];
+		for (j = 0; j < this.ana_key_len; j++) {
+			idx = this.words_arr[i].charCodeAt(j)-ASCII_a;
 			this.searches++;
-			if (diff < 0) {
-				wild_avail += diff;
-				if (wild_avail < 0) {
+			if (local_letter_counts_arr[idx] == 0) {
+				if (wild_avail == 0) {
 					this.words_arr[i] = null;
 					this.num_found--;
 					break;
+				} else { 
+					wild_avail--;
 				}
+			} else {
+				local_letter_counts_arr[idx] -= 1;
 			}
 		}
 	}
