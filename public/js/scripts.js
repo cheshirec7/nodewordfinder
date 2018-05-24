@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-/*jslint node: true */
+/* jslint node: true */
 
 (function (exports, $) {
     "use strict";
@@ -138,7 +138,7 @@
             showSpinner = false;
             $.ajax({
                 type: 'GET',
-                url: 'https://phpwordfinder.erictotten.org/define/' + word,
+                url: 'http://phpwordfinder.erictotten.org/define/' + word,
                 dataType: 'html'
             }).done(function (data, textStatus, jqXHR) {
                 $defModalBody.html(data);

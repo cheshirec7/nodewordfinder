@@ -19,8 +19,8 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "request": "^2.81.0",
-    "tape": "^4.7.0"
+    "request": "^2.87.0",
+    "tape": "^4.9.0"
   },
   "repository": {
     "type": "git",

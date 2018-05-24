@@ -6,7 +6,6 @@ Scrabble / Words With Friends Word Finder for Node.js
 Uses:
 
 * [Express Framework](http://expressjs.com/)
-* [Promises](https://github.com/tildeio/rsvp.js/)
 * [MySQL connection pooling](https://github.com/felixge/node-mysql)
 * [MemCachier](https://github.com/alevy/memjs)
 * [MongoDB](http://www.mongodb.org/)

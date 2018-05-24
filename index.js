@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 /*jslint node: true */
-"use strict";
 
 const express = require('express'),
     path = require('path'),
@@ -9,7 +8,7 @@ const express = require('express'),
     favicon = require('serve-favicon'),
     // env = process.env.NODE_ENV || 'development',
     find = require('./routes/find'),
-    createdd = require('./routes/createdd');
+    createwl = require('./routes/createwl');
 
 express()
     .set('title', 'NodeWordFinder')
@@ -31,7 +30,7 @@ express()
         res.sendFile(__dirname + '/views/index.html');
     }).get('/find', find.results)
     .get('/flush', find.cacheflush)
-    .get('/createdd', createdd.createdd)
+    .get('/createwl', createwl.createwordlists)
     .use(function (req, res, next) {
         let err = new Error('Not Found');
         err.status = 404;

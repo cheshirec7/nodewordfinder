@@ -6,7 +6,7 @@
 let fs = require('fs'),
     memjs = require('memjs'),
     mc = memjs.Client.create(process.env.MEMCACHIER_SERVERS),
-    NUM_WORDLIST_FILES = 27,
+    NUM_WORDLIST_FILES = 24,
     ASCII_a = 97,
     ASCII_z = 122;
 
@@ -16,7 +16,7 @@ function WordList(ana_key_len, letter_counts_arr, wild_count, data_str, cached) 
     this.letter_counts_arr = letter_counts_arr;
     this.wild_count = wild_count;
     this.words_arr = data_str.toString().split('*');
-    this.num_found = this.words_arr.length - 1;
+    this.num_found = this.words_arr.length;
     this.searches = 0;
     this.cached = cached;
 }
@@ -66,6 +66,7 @@ WordList.prototype.nullifyWordsNotMatchedWild = function () {
         }
     }
 };
+
 
 /////
 function outputJSON(arr_results_arr, res) {
