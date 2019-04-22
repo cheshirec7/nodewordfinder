@@ -3,7 +3,7 @@
   "version": "0.9.6",
   "description": "Super-fast Scrabble/WWF Word Finder",
   "engines": {
-    "node": "10.1.0",
+    "node": "11.1.0",
     "npm": "6.0.1"
   },
   "main": "index.js",
@@ -12,15 +12,15 @@
     "test": "node test.js"
   },
   "dependencies": {
-    "compression": "^1.7.2",
+    "compression": "^1.7.4",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "memjs": "^1.2.0",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "request": "^2.87.0",
-    "tape": "^4.9.0"
+    "request": "^2.88.0",
+    "tape": "^4.10.1"
   },
   "repository": {
     "type": "git",
