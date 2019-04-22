@@ -17,7 +17,7 @@ function WordList(ana_key_len, letter_counts_arr, wild_count, data_str, cached) 
     this.wild_count = wild_count;
     this.words_arr = data_str.toString().split('*');
     this.num_found = this.words_arr.length;
-    this.searches = 0;
+    this.num_searches = 0;
     this.cached = cached;
 }
 
@@ -30,7 +30,7 @@ WordList.prototype.nullifyWordsNotMatched = function () {
         local_letter_counts_arr = this.letter_counts_arr.slice(0, this.letter_counts_arr.length);
         for (j = 0; j < this.ana_key_len; j++) {
             idx = this.words_arr[i].charCodeAt(j) - ASCII_a;
-            this.searches++;
+            this.num_searches++;
             if (local_letter_counts_arr[idx] === 0) {
                 this.words_arr[i] = null;
                 this.num_found--;
@@ -51,7 +51,7 @@ WordList.prototype.nullifyWordsNotMatchedWild = function () {
         wild_avail = this.wild_count;
         for (j = 0; j < this.ana_key_len; j++) {
             idx = this.words_arr[i].charCodeAt(j) - ASCII_a;
-            this.searches++;
+            this.num_searches++;
             if (local_letter_counts_arr[idx] === 0) {
                 if (wild_avail === 0) {
                     this.words_arr[i] = null;
@@ -105,7 +105,7 @@ function outputHTML(newtray, arr_results_arr, render_start_time, res) {
         if (arr_results_arr[i].num_found > 0) {
             html += genHTML(arr_results_arr[i].ana_key_len, arr_results_arr[i].words_arr);
             total_found += arr_results_arr[i].num_found;
-            total_searches += arr_results_arr[i].searches;
+            total_searches += arr_results_arr[i].num_searches;
             total_cached += arr_results_arr[i].cached;
         }
     }
